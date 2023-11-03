@@ -1,0 +1,205 @@
+body {
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+/* Ensure the html takes the full height */
+html {
+    height: 100%;
+}
+
+/* Make the body a flex container, make it flow vertically, and ensure it takes up the full height of the html */
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100%;
+}
+
+/* Make the main content (everything but the footer) grow to fill available space */
+.header,
+.section-1,
+.section-2,
+.section-3,
+.section-4 {
+    flex: 1 0 auto; /* This will make these elements take up all available space, and effectively push the footer down */
+}
+
+/* Ensure the footer does not grow but stays at its natural size */
+.footer {
+    flex-shrink: 0; /* This ensures the footer doesn't shrink and always stays at its natural height */
+}
+
+.header,
+.section-1,
+.section-2,
+.section-3,
+.section-4,
+.footer {
+    padding-left: 180px;
+    padding-right: 180px;
+}
+
+/* HEADER */
+
+.header {
+    background-color: #1F2937;
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+
+.header-logo {
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.header-links {
+    display: flex;
+    gap: 20px;
+}
+
+/* SECTION 1 */
+
+.section-1 {
+    display: flex;
+    justify-content: space-evenly;
+    background-color: #1F2937;
+    padding-top: 100px;
+    padding-bottom: 100px;
+    gap: 50px;
+    /* flex-wrap: wrap; */
+}
+
+.section-1-image {
+    max-width: 800px; /* Adjust as per your requirement */
+    width: 100%;
+}
+
+.section-1-text {
+    display: flex;
+    flex-direction: column;
+    color: white;
+    gap: 10px;
+}
+
+.section-1-title {
+    font-weight: bold;
+    font-size: 40px;
+}
+
+.section-1-button {
+    color: white;
+    background-color: #3882f6;
+    border-radius: 5px;
+    width: 100px;
+    padding: 5px 20px; /* Adjust as per your requirement */
+}
+
+/* SECTION 2 */
+.section-2 {
+    padding-top: 50px;
+    padding-bottom: 50px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 30px;
+    flex-wrap: wrap;
+}
+
+.section-2-cat {
+    max-width: 150px; /* Adjust as per your requirement */
+    width: 100%;
+    border-radius: 5px;
+}
+
+.section-2-title {
+    font-weight: bold;
+    font-size: 40px;
+}
+
+.section-2-images {
+    display: flex;
+    padding-left: 50px;
+    padding-right: 50px;
+    gap: 50px;
+}
+
+.section-2-image {
+    display: flex;
+    flex-direction: column;
+}
+
+.section-2-text {
+    max-width: 150px; /* Adjust as per your requirement */
+    text-align: center;
+}
+
+/* SECTION 3 */
+.section-3 {
+    padding-top: 50px;
+    padding-bottom: 50px;
+    background-color: #E5e7eb;
+}
+
+.section-3-quote,
+.section-3-credit {
+    padding-left: 100px;
+    padding-right: 100px;
+}
+
+.section-3-credit {
+    text-align: right;
+    font-weight: bold;
+}
+
+.section-3-quote {
+    font-size: 30px;
+    font-weight:lighter;
+    font-style: italic;
+}
+
+/* SECTION 4  */
+.section-4 {
+    color: white;
+    margin-top: 80px;
+    margin-bottom: 80px;
+}
+
+.section-4-card {
+    background-color: #3882F6;
+    border-radius: 5px;
+    padding-left: 100px;
+    padding-right: 100px;
+    display: flex;
+    justify-content: space-around;
+    padding-top: 40px;
+    padding-bottom: 40px;
+    align-items: center;
+}
+
+.section-4-cta {
+    font-weight: bold;
+    font-size: 20px;
+}
+
+.section-4-button {
+    background-color: #3882F6;
+    border-color: white;
+    color: white;
+    border-radius: 5px;
+    width: 100px;
+    padding: 5px 20px; /* Adjust as per your requirement */
+}
+
+/* FOOTER */
+.footer {
+    background-color: #1F2937;
+    display: flex;
+    justify-content: center;
+    color: white;
+    padding-top: 30px;
+    padding-bottom: 30px;
+}
