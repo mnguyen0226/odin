@@ -1,2 +1,2 @@
 # The Odin Curriculum
-- [A Complete Guide to Flexbox](https://css-tricks.com/snippets/css/a-guide-to-flexbox/)
+- [Odin's Resources Repository](https://mnguyen0226.github.io/posts/web_dev_odin/post/)
