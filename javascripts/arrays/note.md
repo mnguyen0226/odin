@@ -1,5 +1,5 @@
 ### How to run Jest
-IN each directory install
+In each directory install
 ```bash
 npm init
 npm install --save-dev jest
