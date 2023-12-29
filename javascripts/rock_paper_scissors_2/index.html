@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RPS</title>
+</head>
+<body>
+    <div>
+        <h1>Rock Paper Scissors Game</h1>
+    </div>
+    <div>
+        <h3>Player Selection</h3>
+        <div class="player-button">
+            <button type="button" value="rock" id="p-rock">Rock</button>
+            <button type="button" value="paper" id="p-paper">Paper</button>
+            <button type="button" value="scissor" id="p-scissors">Scissors</button>
+        </div>
+    </div>
+    <div>
+        <h3>Round Result</h3>
+        <p id="machine-selection"></p>
+        <p id="player-selection"></p>
+        <p id="round-result"></p>
+    </div>
+    <div>
+        <h3>Game Result</h3>
+        <p id="game-result"></p>
+    </div>
+    
+    <script>
+        // selection button
+        let p_rock = document.getElementById("p-rock")
+        let p_paper = document.getElementById("p-paper")
+        let p_scissors = document.getElementById("p-scissors")
+        
+        // output
+        let machine_select_output = document.getElementById("machine-selection")
+        let player_select_output = document.getElementById("player-selection")
+        let result_output = document.getElementById("round-result")
+        let game_result = document.getElementById("game-result")
+
+        let computer_win_counts = 0, player_win_counts = 0;
+
+
+        // return computer's choice via random distribution
+        function getComputerChoice() {
+            const num = Math.floor(Math.random() * 3);
+            if (num === 0) { return "rock"; }
+            else if (num === 1) { return "paper"; }
+            else { return "scissors"; }
+        }
+
+        // return the results
+        function playRound(playerSelection, computerSelection) {
+            if (playerSelection === "rock") {
+                if (computerSelection === "rock") {
+                    return "It's a tie."
+                } else if (computerSelection === "paper") {
+                    computer_win_counts += 1
+                    return "Computer wins."
+                } else {
+                    player_win_counts += 1
+                    return "You win."
+                }
+            } else if (playerSelection === "paper") {
+                if (computerSelection === "rock") {
+                    player_win_counts += 1
+                    return "You win."
+                } else if (computerSelection === "paper") {
+                    return "It's a tie."
+                } else {
+                    computer_win_counts += 1
+                    return "Computer win."
+                }
+            } else {
+                if (computerSelection === "rock") {
+                    computer_win_counts += 1
+                    return "Computer wins."
+                } else if (computerSelection === "paper") {
+                    player_win_counts += 1
+                    return "You win."
+                } else {
+                    return "It's a tie."
+                }
+            }
+        }
+        
+
+        // when click rock, run function, and return result
+        p_rock.addEventListener('click', () => {
+            // get computer choice
+            const computerSelection = getComputerChoice();
+            machine_select_output.innerText = `Computer selected: ${computerSelection}.`;
+            player_select_output.innerText = 'You selected: rock.';
+            result_output.innerHTML = `${playRound('rock', computerSelection)}`
+    
+            if (player_win_counts === 5) {
+                game_result.innerText = 'You won the game!'
+            } else if (computer_win_counts === 5) {
+                game_result.innerText = 'Computer won the game!'
+            }
+        })
+        
+        // when click paper, run function, and return result
+        p_paper.addEventListener('click', () => {
+            // get computer choice
+            const computerSelection = getComputerChoice();
+            machine_select_output.innerText = `Computer selected: ${computerSelection}.`;
+            player_select_output.innerText = 'You selected: paper.';
+            result_output.innerHTML = `${playRound('paper', computerSelection)}`
+    
+            if (player_win_counts === 5) {
+                game_result.innerText = 'You won the game!'
+            } else if (computer_win_counts === 5) {
+                game_result.innerText = 'Computer won the game!'
+            }
+        })
+
+        // when click scissor, run function, and return result
+        p_scissors.addEventListener('click', () => {
+            // get computer choice
+            const computerSelection = getComputerChoice();
+            machine_select_output.innerText = `Computer selected: ${computerSelection}.`;
+            player_select_output.innerText = 'You selected: scissor.';
+            result_output.innerHTML = `${playRound('scissors', computerSelection)}`
+    
+            if (player_win_counts === 5) {
+                game_result.innerText = 'You won the game!'
+            } else if (computer_win_counts === 5) {
+                game_result.innerText = 'Computer won the game!'
+            }
+        })
+
+    </script>
+</body>
+</html>
