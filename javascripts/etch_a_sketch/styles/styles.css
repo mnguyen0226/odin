@@ -12,3 +12,8 @@
     background-color: #f0f0f0;
     border: 1px solid #ddd;
 }
+
+.container {
+    padding-top: 5px;
+    padding-bottom: 5px;
+}
