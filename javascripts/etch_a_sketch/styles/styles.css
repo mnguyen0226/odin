@@ -1,0 +1,14 @@
+/* create 16 x 16 colume */
+#grid-container {
+    display: grid;
+    grid-template-columns: repeat(16, 30px); 
+    grid-template-rows: repeat(16, 30px);
+    gap: 2px;
+}
+
+.grid-item {
+    width: 30px;
+    height: 30px;
+    background-color: #f0f0f0;
+    border: 1px solid #ddd;
+}
